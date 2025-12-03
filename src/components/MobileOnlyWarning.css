@@ -10,7 +10,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: url('/fondo_0.webp');
+  background-size: cover;
+  background-position: center;
   z-index: 9999;
   align-items: center;
   justify-content: center;
@@ -25,10 +27,9 @@
 }
 
 .warning-logo {
-  width: 200px;
+  width: clamp(400px, 60vw, 700px);
   height: auto;
   margin-bottom: 2rem;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
 .warning-title {
