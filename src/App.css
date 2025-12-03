@@ -1,0 +1,64 @@
+/* ===========================
+   App Container (100vh Sin Scroll)
+   =========================== */
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Contenido principal */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: clamp(40px, 8vh, 60px);
+}
+
+/* Spacer para espacio de botones */
+.spacer {
+  flex-shrink: 0;
+  height: clamp(5px, 1vh, 10px);
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+
+/* Mobile muy pequeño */
+@media (max-height: 600px) {
+  .content-wrapper {
+    padding-bottom: 30px;
+  }
+
+  .spacer {
+    height: 5px;
+  }
+}
+
+/* Tablet y Desktop */
+@media (min-width: 640px) {
+  .content-wrapper {
+    padding-bottom: clamp(45px, 9vh, 70px);
+  }
+
+  .spacer {
+    height: clamp(8px, 2vh, 15px);
+  }
+}
+
+/* Desktop grande */
+@media (min-width: 1024px) {
+  .content-wrapper {
+    padding-bottom: clamp(50px, 10vh, 80px);
+  }
+
+  .spacer {
+    height: clamp(10px, 2vh, 20px);
+  }
+}

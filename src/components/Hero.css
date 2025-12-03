@@ -1,0 +1,62 @@
+/* ===========================
+   Hero Compact (Versión Sin Scroll)
+   =========================== */
+
+.hero-compact {
+  text-align: center;
+  padding: 0;
+  z-index: 40;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Logo MUY GRANDE (400% más grande que original) */
+.logo-small {
+  width: clamp(360px, 80vw, 600px);
+  height: auto;
+  margin: 10vw auto 0;
+  display: block;
+}
+
+/* Título compacto - SIN COLOR */
+.hero-title-compact {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtítulo compacto - OCULTO (se mueve arriba del carrusel) */
+.hero-subtitle-compact {
+  display: none;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+
+/* Mobile muy pequeño */
+@media (max-width: 360px) {
+  .logo-small {
+    width: 300px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .logo-small {
+    width: clamp(400px, 84vw, 680px);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .logo-small {
+    width: clamp(480px, 76vw, 720px);
+  }
+}

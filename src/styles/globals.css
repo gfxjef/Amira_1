@@ -1,0 +1,219 @@
+/* ===========================
+   CSS Reset & Base Styles
+   =========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Sin scroll behavior */
+  overflow: hidden;
+  height: 100vh;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden; /* Sin scroll */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   CSS Variables - Color Palette
+   =========================== */
+
+:root {
+  /* Colores Principales */
+  --sky-start: #4BA9DC;
+  --sky-end: #79C4E3;
+  --green-dark: #2E772B;
+  --green-mid: #398C39;
+  --green-light: #C3CF4E;
+  --yellow-main: #F0E269;
+  --yellow-light: #F9F3C6;
+  --pink-title: #E281ED;
+  --white: #FFFFFF;
+
+  /* Colores de Acento */
+  --orange-warm: #D36B29;
+  --red-soft: #E7554B;
+  --purple-dark: #8C54C7;
+  --purple-light: #B36DE8;
+
+  /* Colores de Texto */
+  --text-light: #FFFFFF;
+  --text-dark: #2E6E9C;
+
+  /* Backgrounds para tarjetas */
+  --bg-card-white: #FFFFFF;
+  --bg-card-yellow: #FFF8D9;
+
+  /* Tipografía */
+  --font-title: 'Baloo 2', cursive;
+  --font-body: 'Quicksand', sans-serif;
+
+  /* Spacing (mobile-first) */
+  --spacing-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --spacing-sm: clamp(0.75rem, 2vw, 1rem);
+  --spacing-md: clamp(1rem, 3vw, 1.5rem);
+  --spacing-lg: clamp(1.5rem, 4vw, 2rem);
+  --spacing-xl: clamp(2rem, 5vw, 3rem);
+  --spacing-2xl: clamp(3rem, 8vw, 5rem);
+
+  /* Tamaños de Fuente Fluidos */
+  --font-size-body: clamp(1rem, 2vw, 1.125rem);
+  --font-size-subtitle: clamp(1.125rem, 2.5vw, 1.5rem);
+  --font-size-title: clamp(2rem, 5vw, 4rem);
+  --font-size-hero: clamp(2.5rem, 6vw, 5rem);
+
+  /* Border Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* Touch Targets (mínimo 44px) */
+  --touch-target-min: 48px;
+
+  /* Breakpoints (para JavaScript) */
+  --breakpoint-tablet: 640px;
+  --breakpoint-desktop: 1024px;
+}
+
+/* ===========================
+   Layout 100vh Sin Scroll
+   =========================== */
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Mobile-first: 1 columna por defecto */
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-shadow {
+  text-shadow:
+    2px 2px 0 var(--pink-title),
+    4px 4px 0 var(--yellow-light),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   Typography
+   =========================== */
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--font-size-hero);
+}
+
+h2 {
+  font-size: var(--font-size-title);
+}
+
+h3 {
+  font-size: var(--font-size-subtitle);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+}
+
+/* ===========================
+   Media Queries (Mobile-First)
+   =========================== */
+
+/* Tablet (640px+) */
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+/* ===========================
+   Accessibility
+   =========================== */
+
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus visible para navegación por teclado */
+*:focus-visible {
+  outline: 3px solid var(--yellow-main);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}

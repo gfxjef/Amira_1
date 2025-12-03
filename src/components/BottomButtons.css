@@ -1,0 +1,102 @@
+/* ===========================
+   Bottom Buttons
+   =========================== */
+
+.bottom-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0;
+  z-index: 50;
+  gap: 0;
+}
+
+.btn-image {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-lugar {
+  width: clamp(200px, 44vw, 340px);
+  height: auto;
+}
+
+.btn-asiste {
+  width: clamp(200px, 44vw, 340px);
+  height: auto;
+}
+
+.btn-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+  transition: filter 0.2s ease;
+}
+
+.btn-image:hover img {
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+}
+
+.btn-image:active img {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+
+/* Mobile muy pequeño */
+@media (max-width: 360px) {
+  .bottom-buttons {
+    bottom: 0;
+    padding: 0;
+  }
+
+  .btn-lugar,
+  .btn-asiste {
+    width: clamp(180px, 40vw, 220px);
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .bottom-buttons {
+    bottom: 0;
+    padding: 0;
+  }
+
+  .btn-lugar,
+  .btn-asiste {
+    width: clamp(260px, 48vw, 360px);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .bottom-buttons {
+    bottom: 0;
+    padding: 0;
+  }
+
+  .btn-lugar,
+  .btn-asiste {
+    width: clamp(300px, 40vw, 400px);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .btn-lugar,
+  .btn-asiste {
+    width: 360px;
+  }
+}

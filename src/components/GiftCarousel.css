@@ -1,0 +1,206 @@
+/* ===========================
+   Gift Carousel
+   =========================== */
+
+/* Wrapper para título + carrusel */
+.carousel-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.15rem, 0.5vw, 0.3rem);
+  width: 100%;
+  padding-top: 5vh;
+}
+
+/* Título "Sugerencias de Regalos" */
+.carousel-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0 clamp(60px, 12vw, 100px);
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+/* Wrapper para la tarjeta */
+.carousel-card-wrapper {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-card-motion {
+  width: 100%;
+  cursor: grab;
+}
+
+.carousel-card-motion:active {
+  cursor: grabbing;
+}
+
+/* Flechas de navegación */
+.arrow {
+  position: absolute;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 35;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.9);
+  user-select: none;
+  padding: 0;
+}
+
+.arrow:hover {
+  color: rgba(255, 255, 255, 1);
+  transform: scale(1.15);
+}
+
+.arrow:active {
+  transform: scale(0.9);
+}
+
+.arrow-left {
+  left: clamp(5px, 2vw, 15px);
+}
+
+.arrow-right {
+  right: clamp(5px, 2vw, 15px);
+}
+
+/* Indicadores (dots) */
+.carousel-dots {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 35;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: #F0E269;
+  border-color: #F0E269;
+  transform: scale(1.3);
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+
+/* Mobile muy pequeño */
+@media (max-width: 360px) {
+  .carousel-container {
+    padding: 0 clamp(50px, 10vw, 60px);
+  }
+
+  .arrow {
+    font-size: 2rem;
+  }
+
+  .carousel-dots {
+    bottom: -35px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .carousel-container {
+    padding: 0 clamp(80px, 15vw, 120px);
+  }
+
+  .carousel-dots {
+    bottom: -45px;
+    gap: 12px;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .carousel-container {
+    padding: 0 clamp(100px, 18vw, 150px);
+  }
+
+  .arrow {
+    font-size: 4rem;
+  }
+
+  .arrow-left {
+    left: 20px;
+  }
+
+  .arrow-right {
+    right: 20px;
+  }
+
+  .carousel-dots {
+    bottom: -50px;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-card-motion {
+    transition: none !important;
+  }
+
+  .arrow,
+  .dot {
+    transition: none !important;
+  }
+}
