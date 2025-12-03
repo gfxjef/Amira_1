@@ -7,7 +7,7 @@
   padding: 0;
   z-index: 40;
   position: relative;
-  height: 20vh;
+  height: 19vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
 .logo-small {
   width: clamp(45vw, 55vw, 65vw);
   height: auto;
-  max-height: 18vh;
+  max-height: 17vh;
   object-fit: contain;
   display: block;
   margin: 0 auto;

@@ -4,7 +4,7 @@
 
 /* Wrapper para título + carrusel */
 .carousel-wrapper {
-  height: 60vh;
+  height: 56vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,14 +25,14 @@
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   line-height: 1.2;
   padding: 1rem;
-  height: 8vh;
+  height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carousel-container {
-  height: 52vh;
+  height: 49vh;
   display: flex;
   flex-direction: column;
   align-items: center;

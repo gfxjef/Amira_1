@@ -13,7 +13,7 @@
   padding: 0;
   z-index: 50;
   gap: 0;
-  height: 20vh;
+  height: 25vh;
   background: transparent;
 }
 
@@ -33,7 +33,7 @@
 .btn-asiste {
   width: auto;
   height: 100%;
-  max-height: 18vh;
+  max-height: 23vh;
 }
 
 .btn-image img {
@@ -60,14 +60,14 @@
 /* Mobile muy pequeño */
 @media (max-width: 360px) {
   .bottom-buttons {
-    height: 18vh;
+    height: 23vh;
   }
 }
 
 /* Tablet */
 @media (min-width: 640px) {
   .bottom-buttons {
-    height: 22vh;
+    height: 27vh;
   }
 }
 
