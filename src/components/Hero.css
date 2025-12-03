@@ -15,7 +15,7 @@
 
 /* Logo con dimensionamiento porcentual */
 .logo-small {
-  width: clamp(30vw, 40vw, 50vw);
+  width: clamp(45vw, 55vw, 65vw);
   height: auto;
   max-height: 18vh;
   object-fit: contain;
