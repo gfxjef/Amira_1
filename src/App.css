@@ -13,10 +13,11 @@
 .content-wrapper {
   position: relative;
   z-index: 10;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 /* ===========================
