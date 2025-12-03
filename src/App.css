@@ -62,3 +62,15 @@
     height: clamp(10px, 2vh, 20px);
   }
 }
+
+/* ===========================
+   Mobile Only - Ocultar contenido en pantallas > 510px
+   =========================== */
+
+@media (min-width: 511px) {
+  .content-wrapper,
+  .carousel-wrapper,
+  .bottom-buttons {
+    display: none !important;
+  }
+}
