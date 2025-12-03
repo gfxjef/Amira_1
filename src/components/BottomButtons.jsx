@@ -2,10 +2,6 @@ import { motion } from 'framer-motion';
 import './BottomButtons.css';
 
 export default function BottomButtons() {
-  const handleAsiste = () => {
-    alert('Gracias por confirmar tu asistencia ❤️\n\nNos vemos en el cumpleaños de Amira!');
-  };
-
   return (
     <div className="bottom-buttons">
       {/* Botón Lugar (izquierda) */}
@@ -21,14 +17,16 @@ export default function BottomButtons() {
       </motion.a>
 
       {/* Botón Asiste (derecha) */}
-      <motion.button
+      <motion.a
+        href="https://api.whatsapp.com/send/?phone=51938101013&text=Hola%21%21+Confirmo+mi+asistencia+al+primer+a%C3%B1o+de+Amira&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
         className="btn-image btn-asiste"
-        onClick={handleAsiste}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <img src="/asiste.webp" alt="Confirmar Asistencia" />
-      </motion.button>
+      </motion.a>
     </div>
   );
 }
